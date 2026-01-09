@@ -87,13 +87,37 @@ inmobiliaria-crescendolls/
 | AOS.js | Animaciones scroll |
 | Font Awesome | Iconos |
 
-## 📸 Capturas
+## 📸 Capturas de Pantalla
 
-### Modo Claro
-![Modo Claro](img/preview-light.png)
+### Página Principal
 
-### Modo Oscuro
-![Modo Oscuro](img/preview-dark.png)
+#### Modo Claro
+![Página Principal - Modo Claro](screenshots/homepage.jpg)
+*Vista de la página principal con el carrusel de propiedades destacadas en modo claro*
+
+#### Modo Oscuro
+![Página Principal - Modo Oscuro](screenshots/homepage_dark.jpg)
+*Vista de la página principal con el carrusel de propiedades destacadas en modo oscuro*
+
+### Catálogo de Propiedades
+
+#### Modo Claro
+![Catálogo de Propiedades - Modo Claro](screenshots/catalogo.jpg)
+*Listado completo de propiedades disponibles en modo claro*
+
+#### Modo Oscuro
+![Catálogo de Propiedades - Modo Oscuro](screenshots/catalogo_dark.jpg)
+*Listado completo de propiedades disponibles en modo oscuro*
+
+---
+
+### Características Visuales Destacadas
+
+- 🎨 **Diseño Moderno**: Interfaz limpia y profesional
+- 🌓 **Modo Oscuro/Claro**: Tema adaptable según preferencias del usuario
+- 📱 **Totalmente Responsive**: Optimizado para todos los dispositivos
+- 🖼️ **Carrusel Dinámico**: Imágenes destacadas con transiciones suaves
+- 🏠 **Grid de Propiedades**: Visualización organizada en formato de tarjetas
 
 ## 👥 Equipo
 

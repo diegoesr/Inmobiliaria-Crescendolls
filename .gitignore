@@ -67,6 +67,13 @@ cache/
 # reportes/*.pdf
 
 # ====================================
+# Capturas de pantalla (opcional)
+# ====================================
+# Descomenta la siguiente línea si NO quieres subir las capturas
+# screenshots/*.png
+# screenshots/*.jpg
+
+# ====================================
 # Archivos SQL de respaldo local
 # ====================================
 # Ignorar dumps SQL locales (excepto el de database/)
