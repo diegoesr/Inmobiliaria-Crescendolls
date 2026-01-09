@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inmobiliaria Crescendolls</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS.js - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=9.6">
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-content">
+      <button class="dark-mode-toggle" id="darkModeToggle" title="Cambiar tema">
+        <i class="fas fa-moon" id="darkModeIcon"></i>
+      </button>
+
+      <h1 class="logo"><i class="fas fa-building"></i> Inmobiliaria Crescendolls</h1>
+
+      <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+
+      <nav id="navMenu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="php/propiedades.php">Propiedades</a>
+        <a href="php/contacto.php">Contacto</a>
+      </nav>
+
+      <button class="favorites-toggle" id="favoritesToggle" title="Ver favoritos">
+        <i class="fas fa-heart"></i>
+        <span class="favorites-count" id="favoritesCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero con Carrusel Elegante -->
+  <section id="inicio" class="hero hero-clean">
+    <div class="hero-carousel">
+      <div class="carousel-slide active" style="background-image: url('img/carrusel/casa1.webp')"></div>
+      <div class="carousel-slide" style="background-image: url('img/carrusel/casa2.webp')"></div>
+      <div class="carousel-slide" style="background-image: url('img/carrusel/casa3.webp')"></div>
+      <div class="carousel-slide" style="background-image: url('img/carrusel/casa4.webp')"></div>
+      <div class="carousel-slide" style="background-image: url('img/carrusel/casa5.webp')"></div>
+
+    </div>
+    <div class="hero-content-box" data-aos="fade-up" data-aos-duration="1000">
+      <h2><i class="fas fa-home"></i> Encuentra la casa de tus sueños</h2>
+      <a href="#propiedades" class="btn">Ver Propiedades destacadas</a>
+    </div>
+    <!-- Indicadores elegantes -->
+    <div class="carousel-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+      <span class="dot" data-slide="4"></span>
+    </div>
+    <!-- Barra de progreso -->
+    <div class="carousel-progress">
+      <div class="progress-bar"></div>
+    </div>
+  </section>
+
+
+  <section id="nosotros" class="about-section">
+    <div class="container">
+      <h2 class="about-title text-center" data-aos="fade-up">¿Por qué elegirnos?</h2>
+      <div class="grid grid-4">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Asesoría 100% Personalizada</h3>
+          <p>Te acompañamos en cada paso del proceso, brindando un servicio personalizado según tus necesidades</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>Transparencia y Confianza</h3>
+          <p>Trabajamos con total transparencia en cada transacción para garantizar tu tranquilidad</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon">
+            <i class="fas fa-scroll"></i>
+          </div>
+          <h3>Compromiso Ético y Legal</h3>
+          <p>Cumplimos con todos los requisitos legales y éticos en cada operación inmobiliaria</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3>Soporte Hipotecario Integral</h3>
+          <p>Te asesoramos en todo el proceso de financiamiento para que obtengas las mejores condiciones</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="propiedades">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Propiedades destacadas</h2>
+      <div class="grid grid-3">
+        <!-- Propiedad 1 - Casa Moderna -->
+        <div class="card property-card" data-aos="fade-up" data-aos-delay="100" data-property-id="1">
+          <div class="card-image-container" onclick="openPropertyModal(0)">
+            <img src="img/propiedades/propiedad1.webp" alt="Casa Moderna">
+            <div class="card-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>Ver detalles</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3><i class="fas fa-house"></i> Casa Moderna</h3>
+              <button class="favorite-btn" data-id="1"
+                onclick="toggleFavorite(event, 1, 'Casa Moderna', 'img/propiedades/propiedad1.webp', '$8,000,000 MXN')">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <p>4 dormitorios · 3 baños · 300m²</p>
+            <p class="property-price">$8,000,000 MXN</p>
+          </div>
+        </div>
+
+        <!-- Propiedad 2 - Apartamento Centro -->
+        <div class="card property-card" data-aos="fade-up" data-aos-delay="200" data-property-id="2">
+          <div class="card-image-container" onclick="openPropertyModal(1)">
+            <img src="img/propiedades/propiedad2.webp" alt="Apartamento Centro">
+            <div class="card-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>Ver detalles</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3><i class="fas fa-building"></i> Apartamento Centro</h3>
+              <button class="favorite-btn" data-id="2"
+                onclick="toggleFavorite(event, 2, 'Apartamento Centro', 'img/propiedades/propiedad2.webp', '$1,000,000 MXN')">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <p>2 dormitorios · 1 baño · 80m²</p>
+            <p class="property-price">$1,000,000 MXN</p>
+          </div>
+        </div>
+
+        <!-- Propiedad 3 - Casa de Lujo -->
+        <div class="card property-card" data-aos="fade-up" data-aos-delay="300" data-property-id="3">
+          <div class="card-image-container" onclick="openPropertyModal(2)">
+            <img src="img/propiedades/propiedad3.webp" alt="Casa de Lujo">
+            <div class="card-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>Ver detalles</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3><i class="fas fa-gem"></i> Casa de Lujo</h3>
+              <button class="favorite-btn" data-id="3"
+                onclick="toggleFavorite(event, 3, 'Casa de Lujo', 'img/propiedades/propiedad3.webp', '$30,000,000 MXN')">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <p>5 dormitorios · 4 baños · 500m²</p>
+            <p class="property-price">$30,000,000 MXN</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Propiedad -->
+  <div id="propertyModal" class="property-modal">
+    <div class="property-modal-content">
+      <button class="modal-close" onclick="closePropertyModal()">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- Carrusel de imágenes de la propiedad -->
+      <div class="property-carousel">
+        <div class="property-slides" id="propertySlides">
+          <!-- Las imágenes se cargan dinámicamente -->
+        </div>
+        <button class="property-carousel-btn prev" onclick="changePropertySlide(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="property-carousel-btn next" onclick="changePropertySlide(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="property-carousel-counter">
+          <span id="currentSlide">1</span> / <span id="totalSlides">1</span>
+        </div>
+      </div>
+
+      <!-- Información de la propiedad -->
+      <div class="property-modal-info">
+        <h2 id="modalPropertyTitle">Título de la propiedad</h2>
+        <p class="modal-property-price" id="modalPropertyPrice">$0 MXN</p>
+        <div class="modal-property-details" id="modalPropertyDetails">
+          <!-- Detalles cargados dinámicamente -->
+        </div>
+        <p class="modal-property-description" id="modalPropertyDescription">
+          Descripción de la propiedad.
+        </p>
+        <a href="php/propiedades.php" class="btn btn-modal">
+          <i class="fas fa-envelope"></i> Solicitar información
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Favoritos -->
+  <div id="favoritesModal" class="favorites-modal">
+    <div class="favorites-modal-content">
+      <div class="favorites-header">
+        <h2><i class="fas fa-heart"></i> Mis Favoritos</h2>
+        <button class="modal-close" onclick="closeFavoritesModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="favorites-list" id="favoritesList">
+        <!-- Lista de favoritos cargada dinámicamente -->
+      </div>
+      <div class="favorites-empty" id="favoritesEmpty">
+        <i class="far fa-heart"></i>
+        <p>No tienes propiedades favoritas</p>
+        <span>Haz clic en el corazón de una propiedad para agregarla</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- NUEVA SECCIÓN: Ubicación -->
+  <section id="ubicacion" class="location-section">
+    <div class="container text-center">
+      <h2 class="location-title" data-aos="fade-up"><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación</h2>
+      <p class="location-description" data-aos="fade-up" data-aos-delay="100">Visita nuestras oficinas en Ciudad
+        Universitaria para atención personalizada.</p>
+      <div class="map-container" data-aos="zoom-in" data-aos-delay="200">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.165379376937!2d-99.18308622580263!3d19.32372744584299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce002f02e216a1%3A0xced86c55ee302fc2!2sFacultad%20de%20Ingenier%C3%ADa%2C%20UNAM!5e0!3m2!1ses!2smx!4v1701031111111!5m2!1ses!2smx"
+          width="100%" height="100%" frameborder="0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" data-aos="fade-up">
+    <p>&copy; 2025 Inmobiliaria Crescendolls. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- AOS.js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Scripts modulares -->
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dark-mode.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+
+</html>

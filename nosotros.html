@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inmobiliaria Crescendolls</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS.js - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=9.6">
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-content">
+      <button class="dark-mode-toggle" id="darkModeToggle" title="Cambiar tema">
+        <i class="fas fa-moon" id="darkModeIcon"></i>
+      </button>
+
+      <h1 class="logo"><i class="fas fa-building"></i> Inmobiliaria Crescendolls</h1>
+
+      <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+
+      <nav id="navMenu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="php/propiedades.php">Propiedades</a>
+        <a href="php/contacto.php">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Nosotros -->
+  <section class="nosotros-hero">
+    <div class="container">
+      <h1 class="page-title"><i class="fas fa-users"></i> Sobre Nosotros</h1>
+      <p class="page-subtitle">Conoce nuestra historia, valores y compromiso con nuestros clientes</p>
+    </div>
+  </section>
+
+  <!-- Información de la Empresa -->
+  <section class="company-info">
+    <div class="container">
+      <!-- ¿Quiénes somos? -->
+      <div class="quienes-somos text-center">
+        <h2><i class="fas fa-building"></i> ¿Quiénes somos?</h2>
+        <p>Somos <strong>Inmobiliaria Crescendolls</strong>, una empresa ubicada en Ciudad Universitaria con más de 10
+          años de experiencia en el rubro inmobiliario. Nos dedicamos a conectar a personas con hogares que realmente se
+          ajustan a sus necesidades y presupuestos.</p>
+      </div>
+
+      <!-- Sección de Video -->
+      <section class="video-section">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-play-circle"></i> Conoce más sobre nosotros</h2>
+          <p class="video-description">Mira nuestro video para conocer más sobre nuestros servicios y propiedades</p>
+          <div class="video-container">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2MmeC6zA3sY"
+              title="Video Inmobiliaria Crescendolls" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Misión y Visión -->
+      <div class="mision-vision-grid">
+        <div class="mision-card">
+          <h3><i class="fas fa-bullseye"></i> Nuestra Misión</h3>
+          <p>Facilitar el proceso de compra, venta y renta de propiedades, ofreciendo un servicio profesional,
+            transparente y personalizado que supere las expectativas de nuestros clientes.</p>
+        </div>
+
+        <div class="vision-card">
+          <h3><i class="fas fa-eye"></i> Nuestra Visión</h3>
+          <p>Ser la inmobiliaria líder en la CDMX, reconocida por nuestra integridad, innovación y compromiso con la
+            satisfacción del cliente.</p>
+        </div>
+      </div>
+
+      <!-- Nuestros Valores -->
+      <div class="valores-section text-center">
+        <h3><i class="fas fa-heart"></i> Nuestros Valores</h3>
+        <ul class="values-list">
+          <li><i class="fas fa-check-circle"></i> <strong>Transparencia:</strong> Operamos con total honestidad en cada
+            transacción</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Compromiso:</strong> Nos dedicamos al 100% a cada cliente</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Profesionalismo:</strong> Equipo altamente capacitado y
+            certificado</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Excelencia:</strong> Buscamos siempre superar expectativas
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Oficinas -->
+  <div class="info-image">
+    <img src="img/oficinas.webp" alt="Nuestras Oficinas">
+    <p class="image-caption">Nuestras oficinas en Ciudad Universitaria</p>
+  </div>
+
+
+  <footer class="footer">
+    <p>&copy; 2025 Inmobiliaria Crescendolls. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts modulares -->
+  <script src="js/app.js"></script>
+  <script src="js/dark-mode.js"></script>
+</body>
+
+</html>

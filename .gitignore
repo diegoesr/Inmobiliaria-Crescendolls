@@ -1,0 +1,81 @@
+# ====================================
+# Archivos de configuración sensibles
+# ====================================
+php/config.php
+*.env
+.env.local
+.env.production
+
+# ====================================
+# Archivos de contraseñas y credenciales
+# ====================================
+password*.txt
+credentials*.txt
+*.key
+*.pem
+
+# ====================================
+# Archivos del sistema operativo
+# ====================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ====================================
+# Archivos de editores/IDEs
+# ====================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ====================================
+# Dependencias y paquetes
+# ====================================
+node_modules/
+vendor/
+bower_components/
+
+# ====================================
+# Logs y archivos temporales
+# ====================================
+*.log
+logs/
+tmp/
+temp/
+cache/
+
+# ====================================
+# Archivos de respaldo
+# ====================================
+*.bak
+*.backup
+*.old
+
+# ====================================
+# Archivos específicos del proyecto
+# ====================================
+# Reportes generados (opcional)
+# reportes/*.pdf
+
+# ====================================
+# Archivos SQL de respaldo local
+# ====================================
+# Ignorar dumps SQL locales (excepto el de database/)
+*.sql
+!database/*.sql
+
+# ====================================
+# Archivos de configuración del servidor
+# ====================================
+.htaccess.local
+.htpasswd
+
