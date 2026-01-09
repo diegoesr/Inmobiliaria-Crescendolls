@@ -121,7 +121,7 @@ inmobiliaria-crescendolls/
 
 ## 👥 Equipo
 
-Desarrollado por **Diego** - [@diegoesr](https://github.com/diegoesr)
+Desarrollado por **Diego Esparza Rodríguez** - [@diegoesr](https://github.com/diegoesr)
 
 ---
 
