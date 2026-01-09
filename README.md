@@ -121,11 +121,7 @@ inmobiliaria-crescendolls/
 
 ## 👥 Equipo
 
-Desarrollado por el equipo de Inmobiliaria Crescendolls.
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT.
+Desarrollado por **Diego** - [@diegoesr](https://github.com/diegoesr)
 
 ---
 
