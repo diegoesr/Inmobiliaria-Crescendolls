@@ -109,6 +109,11 @@ inmobiliaria-crescendolls/
 ![Catálogo de Propiedades - Modo Oscuro](screenshots/catalogo_dark.jpg)
 *Listado completo de propiedades disponibles en modo oscuro*
 
+### Base de Datos en XAMPP
+![BD XAMPP](screenshots/bd.jpg)
+*Creación de las tablas en SQL*
+
+
 ---
 
 ### Características Visuales Destacadas
