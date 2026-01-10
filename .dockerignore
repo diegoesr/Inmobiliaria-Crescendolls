@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Documentación
+README.md
+README-DOCKER.md
+*.md
+
+# Screenshots y reportes
+screenshots/
+reportes/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Docker
+docker-compose.yml
+.dockerignore
+
+# Variables de entorno (no copiar al contenedor)
+.env
+.env.local

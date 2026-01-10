@@ -1,0 +1,72 @@
+services:
+  # Servidor PHP/Apache
+  web:
+    image: php:8.1-apache
+    container_name: inmobiliaria_web
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    volumes:
+      - ../:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+      - DB_HOST=db
+      - DB_USER=${DB_USER:-inmobiliaria_user}
+      - DB_PASS=${DB_PASS:-inmobiliaria_pass}
+      - DB_NAME=${DB_NAME:-eq6inmobiliaria}
+    command: >
+      bash -c "docker-php-ext-install mysqli pdo pdo_mysql && 
+      a2enmod rewrite && 
+      sed -ri -e 's!/var/www/html!$${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf &&
+      sed -ri -e 's!/var/www/!$${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf &&
+      apache2-foreground"
+    networks:
+      - inmobiliaria_network
+
+  # Base de datos MySQL
+  db:
+    image: mysql:8.0
+    container_name: inmobiliaria_db
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${DB_NAME:-eq6inmobiliaria}
+      MYSQL_USER: ${DB_USER:-inmobiliaria_user}
+      MYSQL_PASSWORD: ${DB_PASS:-inmobiliaria_pass}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ../database/inmobiliaria.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ../database/actualizar_imagenes_propiedades.sql:/docker-entrypoint-initdb.d/02-update-images.sql:ro
+    networks:
+      - inmobiliaria_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-rootpassword}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # Adminer - Administrador de base de datos ligero
+  adminer:
+    image: adminer:latest
+    container_name: inmobiliaria_adminer
+    ports:
+      - "${ADMINER_PORT:-8081}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - inmobiliaria_network
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+
+networks:
+  inmobiliaria_network:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
