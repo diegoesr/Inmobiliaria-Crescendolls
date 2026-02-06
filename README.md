@@ -2,12 +2,13 @@
 
 Sitio web inmobiliario moderno con sistema de propiedades, favoritos y modo oscuro.
 
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 ## 📋 Descripción
 
@@ -23,8 +24,6 @@ Inmobiliaria Crescendolls es una aplicación web completa para la gestión y vis
 - 📊 **Panel de Reportes** - Gestión de solicitudes y mensajes
 
 ## 🚀 Instalación
-
-> **Nota:** Este proyecto utiliza Docker para facilitar el despliegue y desarrollo. No se requiere XAMPP ni phpMyAdmin.
 
 ### Requisitos
 - Docker y Docker Compose instalados
@@ -108,7 +107,6 @@ inmobiliaria-crescendolls/
 │
 ├── database/
 │   ├── inmobiliaria.sql    # Script de base de datos
-│   └── actualizar_imagenes_propiedades.sql  # Actualización de rutas de imágenes
 │
 └── docker/
     ├── docker-compose.yml  # Configuración de servicios Docker
@@ -223,7 +221,4 @@ GET /php/api.php?action=propiedades-destacadas&limit=3
 
 Desarrollado por **Diego Esparza Rodríguez** - [@diegoesr](https://github.com/diegoesr)
 
----
-
-⭐ Si te gusta este proyecto, ¡dale una estrella!
 
