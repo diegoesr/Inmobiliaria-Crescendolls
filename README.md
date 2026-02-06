@@ -2,6 +2,7 @@
 
 Sitio web inmobiliario moderno con sistema de propiedades, favoritos y modo oscuro.
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
@@ -23,25 +24,58 @@ Inmobiliaria Crescendolls es una aplicación web completa para la gestión y vis
 
 ## 🚀 Instalación
 
+> **Nota:** Este proyecto utiliza Docker para facilitar el despliegue y desarrollo. No se requiere XAMPP ni phpMyAdmin.
+
 ### Requisitos
-- Servidor web con PHP (XAMPP, WAMP, LAMP)
-- MySQL/MariaDB
+- Docker y Docker Compose instalados
 - Navegador web moderno
 
 ### Pasos
 
 1. **Clona el repositorio**
    ```bash
-   git clone https://github.com/tu-usuario/inmobiliaria-crescendolls.git
+   git clone https://github.com/diegoesr/Inmobiliaria-Crescendolls.git
+   cd Inmobiliaria-Crescendolls
    ```
 
-2. **Configura la base de datos**
-   - Importa el archivo `database/inmobiliaria.sql` en phpMyAdmin
-   - Configura las credenciales en `php/config.php`
+2. **Configura las variables de entorno (opcional)**
+   ```bash
+   cd docker
+   cp env.example.txt .env
+   ```
+   Edita `.env` si necesitas cambiar las credenciales por defecto.
 
-3. **Configura el servidor**
-   - Coloca los archivos en tu carpeta de servidor web
-   - Accede desde `http://localhost/inmobiliaria-crescendolls`
+3. **Inicia los contenedores Docker**
+   ```bash
+   docker-compose up -d
+   ```
+
+4. **Accede a la aplicación**
+   - **Aplicación web**: http://localhost:8080
+   - **Adminer (gestión de BD)**: http://localhost:8081
+     - Servidor: `db`
+     - Usuario: `inmobiliaria_user`
+     - Contraseña: `inmobiliaria_pass`
+     - Base de datos: `eq6inmobiliaria`
+
+### Comandos Docker Útiles
+
+```bash
+# Iniciar contenedores
+docker-compose up -d
+
+# Detener contenedores
+docker-compose down
+
+# Ver logs
+docker-compose logs -f
+
+# Reiniciar servicios
+docker-compose restart
+
+# Detener y eliminar volúmenes (¡cuidado! elimina la BD)
+docker-compose down -v
+```
 
 ## 📁 Estructura del Proyecto
 
@@ -66,26 +100,87 @@ inmobiliaria-crescendolls/
 │
 ├── php/
 │   ├── config.php          # Configuración de BD
+│   ├── api.php             # API REST para propiedades
 │   ├── contacto.php        # Página de contacto
 │   ├── propiedades.php     # Listado de propiedades
 │   ├── reportes.php        # Panel de reportes
 │   └── procesar_*.php      # Procesadores de formularios
 │
-└── database/
-    └── inmobiliaria.sql    # Script de base de datos
+├── database/
+│   ├── inmobiliaria.sql    # Script de base de datos
+│   └── actualizar_imagenes_propiedades.sql  # Actualización de rutas de imágenes
+│
+└── docker/
+    ├── docker-compose.yml  # Configuración de servicios Docker
+    └── env.example.txt     # Ejemplo de variables de entorno
 ```
 
 ## 🛠️ Tecnologías
 
 | Tecnología | Uso |
 |------------|-----|
+| Docker | Contenedorización y despliegue |
+| Docker Compose | Orquestación de servicios |
 | HTML5 | Estructura |
 | CSS3 | Estilos y animaciones |
-| JavaScript | Interactividad |
+| JavaScript (ES6+) | Interactividad y Fetch API |
 | PHP | Backend y conexión BD |
-| MySQL | Base de datos |
+| MySQL | Base de datos relacional |
+| Adminer | Administración de base de datos |
 | AOS.js | Animaciones scroll |
 | Font Awesome | Iconos |
+
+## 🔌 API Endpoints
+
+El proyecto incluye una API REST para acceder a los datos de las propiedades:
+
+### Base URL
+```
+http://localhost:8080/php/api.php
+```
+
+### Endpoints Disponibles
+
+#### Obtener todas las propiedades
+```http
+GET /php/api.php?action=propiedades
+```
+**Respuesta:**
+```json
+{
+  "success": true,
+  "data": [...],
+  "count": 10
+}
+```
+
+#### Obtener una propiedad específica
+```http
+GET /php/api.php?action=propiedad&id=1
+```
+**Respuesta:**
+```json
+{
+  "success": true,
+  "data": {...}
+}
+```
+
+#### Obtener propiedades destacadas
+```http
+GET /php/api.php?action=propiedades-destacadas&limit=3
+```
+**Parámetros:**
+- `limit` (opcional): Número de propiedades a obtener (por defecto: 3, máximo: 20)
+
+**Respuesta:**
+```json
+{
+  "success": true,
+  "data": [...],
+  "count": 3
+}
+```
 
 ## 📸 Capturas de Pantalla
 
@@ -109,9 +204,9 @@ inmobiliaria-crescendolls/
 ![Catálogo de Propiedades - Modo Oscuro](screenshots/catalogo_dark.jpg)
 *Listado completo de propiedades disponibles en modo oscuro*
 
-### Base de Datos en XAMPP
-![BD XAMPP](screenshots/bd.jpg)
-*Creación de las tablas en SQL*
+### Base de Datos en Adminer
+![BD Adminer](screenshots/bd.jpg)
+*Gestión de la base de datos mediante Adminer en Docker*
 
 
 ---
